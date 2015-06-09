@@ -9,6 +9,12 @@ commit after each test passes
 
 [Making Arrays More Functional](http://slides.com/jasonsewell/making-arrays-more-functional)
 
+## Install dependencies
+
+```
+npm install
+```
+
 ## Run test script
 
 ```
