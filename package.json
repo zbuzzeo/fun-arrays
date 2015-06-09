@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devleague/Fun-Arrays.git"
+    "url": "git+https://github.com/devleague/fun-arrays.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Dev League LLC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/devleague/Fun-Arrays/issues"
   },
-  "homepage": "https://github.com/devleague/Fun-Arrays#readme",
+  "homepage": "https://github.com/devleague/fun-arrays#readme",
   "devDependencies": {
     "chai": "^3.0.0",
     "mocha": "^2.2.5"
