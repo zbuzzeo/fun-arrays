@@ -54,7 +54,7 @@ var sumOfInterests = null;
   for all amounts in bankBalances
   where the amount of the sum of interests in that state is
     greater than 50,000
-  in each of the following states
+  in every state except
     Wisconsin
     Illinois
     Wyoming
