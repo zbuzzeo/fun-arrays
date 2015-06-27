@@ -22,7 +22,6 @@ describe('Array Methods', function() {
     });
 
     it('each accounts `rounded` value should be rounded to the nearest dollar', function() {
-      parseFloat(arrayMethods.roundedDollar[0].amount).should.be.equal(822370.71);
       arrayMethods.roundedDollar[0].rounded.should.be.equal(822371);
       arrayMethods.roundedDollar[7].rounded.should.be.equal(231272);
       arrayMethods.roundedDollar[9].rounded.should.be.equal(683737);
