@@ -5,17 +5,17 @@ var arrayMethods = require('../array-methods');
 
 describe('Array Methods', function() {
 
-  describe('hundredThousandairs', function() {
-    
+  describe.skip('hundredThousandairs', function() {
+
     it('should be an array with accounts from bankBalances that are greater than 100000.00', function() {
       arrayMethods.hundredThousandairs.should.have.length(93);
       arrayMethods.hundredThousandairs.every(function (account){ return account.amount > 100000; }).should.be.true;
     });
-    
+
   });
 
-  describe('roundedDollar', function() {
-    
+  describe.skip('roundedDollar', function() {
+
     it('should be an array of accounts with an added key `rounded`', function() {
       arrayMethods.roundedDollar.should.have.length(100);
       arrayMethods.roundedDollar.every(function (account){ return account.hasOwnProperty('rounded'); }).should.be.true;
@@ -31,8 +31,8 @@ describe('Array Methods', function() {
 
   });
 
-  describe('roundedDime', function() {
-    
+  describe.skip('roundedDime', function() {
+
     it('should be an array of accounts with a modified `amount` value', function() {
       arrayMethods.roundedDime.should.have.length(100);
       arrayMethods.roundedDime.every(function (account){ return account.hasOwnProperty('amount'); }).should.be.true;
@@ -47,15 +47,15 @@ describe('Array Methods', function() {
 
   });
 
-  describe('sumOfBankBalances', function() {
-    
+  describe.skip('sumOfBankBalances', function() {
+
     it('should be the sum of all amounts in bankBalances, rounded to the nearest cent', function() {
       arrayMethods.sumOfBankBalances.should.be.equal(55502603.02);
     });
-    
+
   });
 
-  describe('sumOfInterests', function() {
+  describe.skip('sumOfInterests', function() {
 
     it('should be the sum the 18.9% interest for all amounts in bankBalances, in the selected states, rounded to the nearest cent', function() {
       arrayMethods.sumOfInterests.should.be.equal(2504611.23);
@@ -71,7 +71,7 @@ describe('Array Methods', function() {
 
   });
 
-  describe('stateSums', function() {
+  describe.skip('stateSums', function() {
 
     it('should be a hash table', function() {
       chai.assert.isObject(arrayMethods.stateSums);
@@ -94,7 +94,7 @@ describe('Array Methods', function() {
 
   });
 
-  describe('lowerSumStates', function() {
+  describe.skip('lowerSumStates', function() {
 
     it('should be an Array', function() {
       chai.assert.isArray(arrayMethods.lowerSumStates);
@@ -105,8 +105,8 @@ describe('Array Methods', function() {
     });
 
   });
-  
-  describe('higherStateSums', function() {
+
+  describe.skip('higherStateSums', function() {
 
     it('should be the sum of all amounts of every state, where the sum of amounts in the state is greater than 1,000,000', function() {
       arrayMethods.higherStateSums.should.be.equal(48629878.25);
@@ -114,7 +114,7 @@ describe('Array Methods', function() {
 
   });
 
-  describe('areStatesInHigherStateSum should be true if all of these states have a sum of account values greater than 2,550,000', function() {
+  describe.skip('areStatesInHigherStateSum should be true if all of these states have a sum of account values greater than 2,550,000', function() {
 
     it('should be the sum of all amounts of every state, where the sum of amounts in the state is greater than 1,000,000', function() {
       arrayMethods.areStatesInHigherStateSum.should.be.false;
@@ -122,7 +122,7 @@ describe('Array Methods', function() {
 
   });
 
-  describe('anyStatesInHigherStateSum should be true if any of these states have a sum of account values greater than 2,550,000', function() {
+  describe.skip('anyStatesInHigherStateSum should be true if any of these states have a sum of account values greater than 2,550,000', function() {
 
     it('should be the sum of all amounts of every state, where the sum of amounts in the state is greater than 1,000,000', function() {
       arrayMethods.anyStatesInHigherStateSum.should.be.true;
