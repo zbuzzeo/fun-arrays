@@ -106,6 +106,8 @@ var higherStateSums = null;
 var areStatesInHigherStateSum = null;
 
 /*
+  Stretch Goal && Final Boss
+  
   set anyStatesInHigherStateSum to be true if
     any of these states have a sum of account values
       greater than 2,550,000
