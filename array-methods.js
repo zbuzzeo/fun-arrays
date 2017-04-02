@@ -136,7 +136,7 @@ var anyStatesInHigherStateSum = null;
 
 module.exports = {
   hundredThousandairs : hundredThousandairs,
-  datasetWithRoundedDollar : roundedDollar,
+  datasetWithRoundedDollar : datasetWithRoundedDollar,
   datasetWithRoundedDime : datasetWithRoundedDime,
   sumOfBankBalances : sumOfBankBalances,
   sumOfInterests : sumOfInterests,
