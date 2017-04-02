@@ -63,7 +63,7 @@ describe('Array Methods', function() {
     it('should have a key for each state', function() {
       let stateKeys = Object.keys(arrayMethods.stateSums);
       stateKeys.should.have.length(37);
-      stateKeys.should.have.members(['ME', 'WI', 'ID', 'HI']);
+      stateKeys.should.include.members(['ME', 'WI', 'ID', 'HI']);
     });
 
     it('should have a keys with values being the sum for each state, rounded to the nearest cent', function() {
