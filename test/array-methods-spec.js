@@ -18,11 +18,11 @@ describe('Array Methods', function() {
     });
 
     it('each accounts `rounded` value should be rounded to the nearest dollar', function() {
-      arrayMethods.roundedDollar[0].rounded.should.be.equal(822371);
-      arrayMethods.roundedDollar[7].rounded.should.be.equal(231272);
-      arrayMethods.roundedDollar[9].rounded.should.be.equal(683737);
-      arrayMethods.roundedDollar[10].rounded.should.be.equal(913216);
-      arrayMethods.roundedDollar[99].rounded.should.be.equal(196086);
+      arrayMethods.datasetWithRoundedDollar[0].rounded.should.be.equal(822371);
+      arrayMethods.datasetWithRoundedDollar[7].rounded.should.be.equal(231272);
+      arrayMethods.datasetWithRoundedDollar[9].rounded.should.be.equal(683737);
+      arrayMethods.datasetWithRoundedDollar[10].rounded.should.be.equal(913216);
+      arrayMethods.datasetWithRoundedDollar[99].rounded.should.be.equal(196086);
     });
   });
 
@@ -33,7 +33,7 @@ describe('Array Methods', function() {
       arrayMethods.datasetWithRoundedDime.every(function (account){ return account.hasOwnProperty('roundedDime'); }).should.be.true;
 
       // should NOT have a property of `rounded`
-      arrayMethods.roundedDime.every(function (account){ return !account.hasOwnProperty('rounded'); }).should.be.true;
+      arrayMethods.datasetWithRoundedDime.every(function (account){ return !account.hasOwnProperty('rounded'); }).should.be.true;
     });
 
     it('each account\'s `roundedDime` value should be the `amount` value rounded to the nearest dime', function() {
