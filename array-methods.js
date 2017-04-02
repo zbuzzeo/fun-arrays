@@ -94,7 +94,7 @@ var stateSums = null;
     Georgia
     Delaware
   take each `amount` and add 18.9% interest to it
-  while summing it all up into one value to be saved to `sumOfInterests`
+  only sum values greater than 50,000 and save it to `sumOfInterests`
 
   note: During your summation (
     if at any point durig your calculation where the number looks like `2486552.9779399997`
