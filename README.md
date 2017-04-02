@@ -16,6 +16,10 @@ var hundredThousandairs = null;
 
 Fulfill the requirements using iterative Array methods.
 
+## Caveats
+
+DO NOT MUTATE THE ORIGINAL DATA.
+
 ## Getting Started
 
 1. Clone this repository and change your current working directory to this repository
