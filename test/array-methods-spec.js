@@ -43,11 +43,10 @@ describe('Array Methods', function() {
     });
 
     it('each accounts `roundedDime` value should be rounded to the nearest dime', function() {
-      arrayMethods.roundedDime[0].amount.should.be.equal(822370.7);
-      arrayMethods.roundedDime[7].amount.should.be.equal(231272);
-      arrayMethods.roundedDime[99].amount.should.be.equal(196085.9);
+      arrayMethods.roundedDime[0].roundedDime.should.be.equal(822370.7);
+      arrayMethods.roundedDime[7].roundedDime.should.be.equal(231272);
+      arrayMethods.roundedDime[99].roundedDime.should.be.equal(196085.9);
     });
-
   });
 
   describe('sumOfBankBalances', function() {
