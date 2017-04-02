@@ -3,16 +3,18 @@ var dataset = require('./dataset.json');
 /*
   create an array with accounts from bankBalances that are
   greater than 100000
-  assign the resulting array to `hundredThousandairs`
+  assign the resulting new array to `hundredThousandairs`
 */
 var hundredThousandairs = null;
 
 /*
-  Create a new object, DO NOT MUTATE DATA.
+  DO NOT MUTATE DATA.
 
-  The new object will have all the same properties e.g. `state` and `amount`
-  You will add one new key to this object: `rounded`
-  The value of this key will be the `amount` rounded to the nearest dollar
+  create a new dataset where each bank object is a new object.
+  `amount` and `state` values will be transferred to the new object.
+  This new object is different, you will add one new key of `rounded`
+
+  `rounded` value is `amount` rounded to the nearest dollar
 
   Example:
     {
@@ -20,24 +22,32 @@ var hundredThousandairs = null;
       "state": "HI",
       "rounded": 134758
     }
-  assign the resulting array to `datasetWithRoundedDollar`
+  assign the resulting new array to `datasetWithRoundedDollar`
 */
 var datasetWithRoundedDollar = null;
 
 /*
-  Create a new object, DO NOT MUTATE DATA.
+  DO NOT MUTATE DATA.
 
-  The new object will have all the same properties e.g. `state` and `amount`
-  You will add one new key to this object: `roundedDime`
-  The value of this key will be the `amount` rounded to the nearest 10th of a cent
+  create a new dataset where each bank object is a new object.
+  `amount` and `state` values will be transferred to the new object.
+  This new object is different, you will add one new key of `roundedDime`
 
-  Example
+  `roundedDime` value is `amount` rounded to the nearest 10th of a cent
+
+  Example 1
     {
       "amount": "134758.46",
       "state": "HI"
       "roundedDime": 134758.5
     }
-  assign the resulting array to `roundedDime`
+  Example 2
+    {
+      "amount": "134758.44",
+      "state": "HI"
+      "roundedDime": 134758.4
+    }
+  assign the resulting new array to `roundedDime`
 */
 var datasetWithRoundedDime = null;
 
