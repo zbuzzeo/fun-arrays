@@ -68,6 +68,19 @@ var sumOfBankBalances = null;
 var sumOfInterests = null;
 
 /*
+  aggregate the sum of bankBalance amounts
+  grouped by state
+  set stateSums to be a hash table where
+
+  the key is:
+    the two letter state abbreviation
+  and the value is:
+    the sum of all amounts from that state
+    the value must be rounded to the nearest cent
+ */
+var stateSums = null;
+
+/*
   from each of the following states:
     Wisconsin
     Illinois
@@ -83,19 +96,6 @@ var sumOfInterests = null;
   while summing it all up into one value to be saved to `sumOfInterests`
  */
 var sumOfHighInterests = null;
-
-/*
-  aggregate the sum of bankBalance amounts
-  grouped by state
-  set stateSums to be a hash table where
-
-  the key is:
-    the two letter state abbreviation
-  and the value is:
-    the sum of all amounts from that state
-    the value must be rounded to the nearest cent
- */
-var stateSums = null;
 
 /*
   set `lowerSumStates` to be an array of two letter state

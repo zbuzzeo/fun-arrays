@@ -55,12 +55,6 @@ describe('Array Methods', function() {
     });
   });
 
-  describe('sumOfHighInterests', function() {
-    it('should be the sum the 18.9% interest for all amounts in bankBalances, where the amount of the sum of interests in that state is greater than 50,000, in the selected states, rounded to the nearest cent', function() {
-      arrayMethods.sumOfHighInterests.should.be.equal(7935913.99);
-    });
-  });
-
   describe('stateSums', function() {
     it('should be a hash table', function() {
       chai.assert.isObject(arrayMethods.stateSums);
@@ -77,6 +71,12 @@ describe('Array Methods', function() {
       arrayMethods.stateSums.WI.should.be.equal(2958669.19);
       arrayMethods.stateSums.ID.should.be.equal(461647.46);
       arrayMethods.stateSums.HI.should.be.equal(901770.4);
+    });
+  });
+
+  describe('sumOfHighInterests', function() {
+    it('should be the sum the 18.9% interest for all amounts in bankBalances, where the amount of the sum of interests in that state is greater than 50,000, in the selected states, rounded to the nearest cent', function() {
+      arrayMethods.sumOfHighInterests.should.be.equal(7935913.99);
     });
   });
 
