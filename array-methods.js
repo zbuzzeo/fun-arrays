@@ -77,6 +77,11 @@ var sumOfInterests = null;
   and the value is:
     the sum of all amounts from that state
     the value must be rounded to the nearest cent
+
+  note: During your summation (
+    if at any point durig your calculation where the number looks like `2486552.9779399997`
+    round this number to the nearest 10th of a cent before moving on.
+  )
  */
 var stateSums = null;
 
@@ -89,11 +94,12 @@ var stateSums = null;
     Georgia
     Delaware
   take each `amount` and add 18.9% interest to it
-    (
-      if at any point durig your calculation where the number looks like `2486552.9779399997`
-      round this number to the nearest 10th of a cent before moving on.
-    )
   while summing it all up into one value to be saved to `sumOfInterests`
+
+  note: During your summation (
+    if at any point durig your calculation where the number looks like `2486552.9779399997`
+    round this number to the nearest 10th of a cent before moving on.
+  )
  */
 var sumOfHighInterests = null;
 
