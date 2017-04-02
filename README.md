@@ -16,6 +16,9 @@ var hundredThousandairs = null;
 
 Fulfill the requirements using iterative Array methods.
 
+## THE DATA `dataset.json`
+`bankBalances` holds a collection of data. At each position is an object with an `amount` and `state` property. Each of these objects represent a bank in a state. a State can have multiple banks which may be represented in the collection.
+
 ## Caveats
 
 DO NOT MUTATE THE ORIGINAL DATA.
