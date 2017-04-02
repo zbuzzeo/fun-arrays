@@ -75,12 +75,12 @@ var sumOfInterests = null;
     Ohio
     Georgia
     Delaware
-    find the banks where the `amount` is greater than 50,000
-    add 18.9% interest to that `amount`
-    and then sum up the `amount` values for each bank
-    and round it to the nearest cent
-
-    the result should be saved to `sumOfHighInterests`
+  take each `amount` and add 18.9% interest to it
+    (
+      if at any point durig your calculation where the number looks like `2486552.9779399997`
+      round this number to the nearest 10th of a cent before moving on.
+    )
+  while summing it all up into one value to be saved to `sumOfInterests`
  */
 var sumOfHighInterests = null;
 
