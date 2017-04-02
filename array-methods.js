@@ -20,9 +20,9 @@ var hundredThousandairs = null;
       "state": "HI",
       "rounded": 134758
     }
-  assign the resulting array to `roundedDollar`
+  assign the resulting array to `datasetWithRoundedDollar`
 */
-var roundedDollar = null;
+var datasetWithRoundedDollar = null;
 
 /*
   Create a new object, DO NOT MUTATE DATA.
@@ -39,7 +39,7 @@ var roundedDollar = null;
     }
   assign the resulting array to `roundedDime`
 */
-var roundedDime = null;
+var datasetWithRoundedDime = null;
 
 // set sumOfBankBalances to be the sum of all value held at `amount` for each bank object
 var sumOfBankBalances = null;
@@ -136,8 +136,8 @@ var anyStatesInHigherStateSum = null;
 
 module.exports = {
   hundredThousandairs : hundredThousandairs,
-  roundedDollar : roundedDollar,
-  roundedDime : roundedDime,
+  datasetWithRoundedDollar : roundedDollar,
+  datasetWithRoundedDime : datasetWithRoundedDime,
   sumOfBankBalances : sumOfBankBalances,
   sumOfInterests : sumOfInterests,
   sumOfHighInterests : sumOfHighInterests,
