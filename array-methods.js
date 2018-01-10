@@ -95,7 +95,7 @@ var stateSums = null;
     Delaware
   sum the amount for each state (stateSum)
   take each `stateSum` and add 18.9% interest to it
-  sum only `stateSum` who's interest only values is greater than 50,000 and save it to `sumOfHighInterests`
+  sum only `stateSum` interest values that are greater than 50,000 and save it to `sumOfHighInterests`
 
   note: During your summation (
     if at any point durig your calculation where the number looks like `2486552.9779399997`
