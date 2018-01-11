@@ -86,7 +86,7 @@ var sumOfInterests = null;
 var stateSums = null;
 
 /*
-  for all states not in the following states:
+  for all states *NOT* in the following states:
     Wisconsin
     Illinois
     Wyoming
