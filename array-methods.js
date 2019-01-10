@@ -1,6 +1,7 @@
 'use strict';
 const dataset = require('./dataset.json');
 const bankBalances = dataset.bankBalances;
+const selectStates = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
 
 /*
   create an array with accounts from bankBalances that are
@@ -8,15 +9,13 @@ const bankBalances = dataset.bankBalances;
   assign the resulting new array to `hundredThousandairs`
 */
 
-let hundredThousandairs = bankBalances.filter(account => {
-  if (account.amount > 100000) {
-    return account;
-  }
+const hundredThousandairs = bankBalances.filter(account => {
+  return account.amount > 100000;
 })
 
 // set sumOfBankBalances to be the sum of all value held at `amount` for each bank object
 
-let sumOfBankBalances = bankBalances.map(account => {
+const sumOfBankBalances = bankBalances.map(account => {
   return parseInt(account.amount);
 })
   // reduce the mapped array.
@@ -37,19 +36,7 @@ let sumOfBankBalances = bankBalances.map(account => {
   and then sum it all up into one value saved to `sumOfInterests`
  */
 
-// let filteredAccounts = bankBalances.filter(account => {
-//   let selectStates = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
-//   if (selectStates.includes(account.state)) {
-//     let amount = parseInt(account.amount);
-//     let amountWithInterest = amount + (amount * 0.189);
-//     // console.log(Math.ceil(amountWithInterest));
-//     return Math.ceil(amountWithInterest);
-//   }
-// });
-
-let selectStates = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
-
-let sumOfInterests = bankBalances
+const sumOfInterests = bankBalances
   .filter(account => {
     return selectStates.includes(account.state);
   })
@@ -76,16 +63,15 @@ let sumOfInterests = bankBalances
     round this number to the nearest dollar before moving on.
   )
  */
-let stateSums = bankBalances
+const stateSums = bankBalances
   .reduce((accumulator, account) => {
-    console.log(accumulator);
     if (accumulator.hasOwnProperty(account.state)) {
       accumulator[account.state] += Math.round(parseInt(account.amount));
     } else {
       accumulator[account.state] = Math.round(parseInt(account.amount));
     }
     return accumulator;
-  }, {});
+  }, {})
 
 /*
   for all states *NOT* in the following states:
@@ -104,20 +90,30 @@ let stateSums = bankBalances
     round this number to the nearest dollar before moving on.
   )
  */
-var sumOfHighInterests = null;
 
+// this can be done with a .filter() and a .reduce();
+const sumOfHighInterests = Object.keys(stateSums)
+.filter(key => {
+  return !(selectStates.includes(key));
+})
+.reduce((sum, key) => {
+  // if (Math.round((stateSums[key] * 0.189)) > 50000) {
+    return sum + Math.round((stateSums[key] * 0.189));
+  // }
+  // return sum;
+}, 0)
 /*
   set `lowerSumStates` to be an array of two letter state
   abbreviations of each state where the sum of amounts
   in the state is less than 1,000,000
  */
-var lowerSumStates = null;
+const lowerSumStates = null;
 
 /*
   aggregate the sum of each state into one hash table
   `higherStateSums` should be the sum of all states with totals greater than 1,000,000
  */
-var higherStateSums = null;
+const higherStateSums = null;
 
 /*
   from each of the following states:
@@ -134,7 +130,7 @@ var higherStateSums = null;
   if true set `areStatesInHigherStateSum` to `true`
   otherwise set it to `false`
  */
-var areStatesInHigherStateSum = null;
+const areStatesInHigherStateSum = null;
 
 /*
   Stretch Goal && Final Boss
@@ -150,7 +146,7 @@ var areStatesInHigherStateSum = null;
   have a sum of account values greater than 2,550,000
   otherwise set it to be `false`
  */
-var anyStatesInHigherStateSum = null;
+const anyStatesInHigherStateSum = null;
 
 
 module.exports = {
