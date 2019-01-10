@@ -20,20 +20,37 @@ let balancesOnly = bankBalances.map(account => {
 
 let sumOfBankBalances = balancesOnly.reduce((a, b) => {
   return a + b;
-});
+}, 0
+);
 
 /*
   from each of the following states:
-    Wisconsin
-    Illinois
-    Wyoming
-    Ohio
-    Georgia
-    Delaware
+    Wisconsin   -   WI
+    Illinois    -   IL
+    Wyoming     -   WY
+    Ohio        -   OH
+    Georgia     -   GA
+    Delaware    -   DE
   take each `amount` and add 18.9% interest to it rounded to the nearest dollar 
   and then sum it all up into one value saved to `sumOfInterests`
  */
-var sumOfInterests = null;
+
+let filteredAccounts = bankBalances.filter(account => {
+  let selectStates = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
+  if (selectStates.includes(account.state)) {
+    let amount = parseInt(account.amount);
+    let amountWithInterest = amount + (amount * 0.189);
+    // console.log(Math.ceil(amountWithInterest));
+    return Math.ceil(amountWithInterest);
+  }
+});
+
+let sumOfInterests = filteredAccounts.reduce((accumulator, account) => {
+  console.log(account.amount);
+  return parseInt(accumulator) += account.amount;
+}, 0);
+
+// console.log(sumOfInterests);
 
 /*
   aggregate the sum of bankBalance amounts
