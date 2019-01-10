@@ -6,20 +6,21 @@ const bankBalances = dataset.bankBalances;
   greater than 100000
   assign the resulting new array to `hundredThousandairs`
 */
-let hundredThousandairs = bankBalances.filter(function(account) {
+
+let hundredThousandairs = bankBalances.filter(account => {
   if (account.amount > 100000) {
     return account;
   }
-});
-
-console.log(hundredThousandairs);
-
-// dataset.filter(function(element, index, array) {
-//   console.log(`element is ${e}`);
-// });
+})
 
 // set sumOfBankBalances to be the sum of all value held at `amount` for each bank object
-var sumOfBankBalances = null;
+let balancesOnly = bankBalances.map(account => {
+  return parseInt(account.amount);
+});
+
+let sumOfBankBalances = balancesOnly.reduce((a, b) => {
+  return a + b;
+});
 
 /*
   from each of the following states:
