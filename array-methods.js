@@ -1,3 +1,4 @@
+'use strict';
 const dataset = require('./dataset.json');
 const bankBalances = dataset.bankBalances;
 
@@ -22,7 +23,7 @@ let sumOfBankBalances = bankBalances.map(account => {
   .reduce((a, b) => {
     return a + b;
   }
-);
+  );
 
 /*
   from each of the following states:
@@ -46,17 +47,18 @@ let sumOfBankBalances = bankBalances.map(account => {
 //   }
 // });
 
-let sumOfInterests = bankBalances.filter(account => {
-  let selectStates = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
-  return selectStates.includes(account.state);
-})
+let selectStates = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
+
+let sumOfInterests = bankBalances
+  .filter(account => {
+    return selectStates.includes(account.state);
+  })
   .map(account => {
     return parseInt(account.amount);
   })
-    .reduce((runningTotal, currentValue) => {
-      return Math.round(runningTotal + (currentValue * 0.189));
-    }, 0
-    );
+  .reduce((runningTotal, currentValue) => {
+    return Math.round(runningTotal + (currentValue * 0.189));
+  }, 0);
 
 /*
   aggregate the sum of bankBalance amounts
@@ -70,11 +72,20 @@ let sumOfInterests = bankBalances.filter(account => {
     the value must be rounded to the nearest dollar
 
   note: During your summation (
-    if at any point durig your calculation where the number looks like `2486552.9779399997`
+    if at any point during your calculation where the number looks like `2486552.9779399997`
     round this number to the nearest dollar before moving on.
   )
  */
-var stateSums = null;
+let stateSums = bankBalances
+  .reduce((accumulator, account) => {
+    console.log(accumulator);
+    if (accumulator.hasOwnProperty(account.state)) {
+      accumulator[account.state] += Math.round(parseInt(account.amount));
+    } else {
+      accumulator[account.state] = Math.round(parseInt(account.amount));
+    }
+    return accumulator;
+  }, {});
 
 /*
   for all states *NOT* in the following states:
@@ -143,13 +154,13 @@ var anyStatesInHigherStateSum = null;
 
 
 module.exports = {
-  hundredThousandairs : hundredThousandairs,
-  sumOfBankBalances : sumOfBankBalances,
-  sumOfInterests : sumOfInterests,
-  sumOfHighInterests : sumOfHighInterests,
-  stateSums : stateSums,
-  lowerSumStates : lowerSumStates,
-  higherStateSums : higherStateSums,
-  areStatesInHigherStateSum : areStatesInHigherStateSum,
-  anyStatesInHigherStateSum : anyStatesInHigherStateSum
+  hundredThousandairs: hundredThousandairs,
+  sumOfBankBalances: sumOfBankBalances,
+  sumOfInterests: sumOfInterests,
+  sumOfHighInterests: sumOfHighInterests,
+  stateSums: stateSums,
+  lowerSumStates: lowerSumStates,
+  higherStateSums: higherStateSums,
+  areStatesInHigherStateSum: areStatesInHigherStateSum,
+  anyStatesInHigherStateSum: anyStatesInHigherStateSum
 };
