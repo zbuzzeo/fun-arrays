@@ -14,13 +14,14 @@ let hundredThousandairs = bankBalances.filter(account => {
 })
 
 // set sumOfBankBalances to be the sum of all value held at `amount` for each bank object
-let balancesOnly = bankBalances.map(account => {
-  return parseInt(account.amount);
-});
 
-let sumOfBankBalances = balancesOnly.reduce((a, b) => {
-  return a + b;
-}, 0
+let sumOfBankBalances = bankBalances.map(account => {
+  return parseInt(account.amount);
+})
+  // reduce the mapped array.
+  .reduce((a, b) => {
+    return a + b;
+  }
 );
 
 /*
@@ -35,22 +36,27 @@ let sumOfBankBalances = balancesOnly.reduce((a, b) => {
   and then sum it all up into one value saved to `sumOfInterests`
  */
 
-let filteredAccounts = bankBalances.filter(account => {
+// let filteredAccounts = bankBalances.filter(account => {
+//   let selectStates = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
+//   if (selectStates.includes(account.state)) {
+//     let amount = parseInt(account.amount);
+//     let amountWithInterest = amount + (amount * 0.189);
+//     // console.log(Math.ceil(amountWithInterest));
+//     return Math.ceil(amountWithInterest);
+//   }
+// });
+
+let sumOfInterests = bankBalances.filter(account => {
   let selectStates = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
-  if (selectStates.includes(account.state)) {
-    let amount = parseInt(account.amount);
-    let amountWithInterest = amount + (amount * 0.189);
-    // console.log(Math.ceil(amountWithInterest));
-    return Math.ceil(amountWithInterest);
-  }
-});
-
-let sumOfInterests = filteredAccounts.reduce((accumulator, account) => {
-  console.log(account.amount);
-  return parseInt(accumulator) += account.amount;
-}, 0);
-
-// console.log(sumOfInterests);
+  return selectStates.includes(account.state);
+})
+  .map(account => {
+    return parseInt(account.amount);
+  })
+    .reduce((runningTotal, currentValue) => {
+      return Math.round(runningTotal + (currentValue * 0.189));
+    }, 0
+    );
 
 /*
   aggregate the sum of bankBalance amounts
