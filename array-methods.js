@@ -121,7 +121,7 @@ const lowerSumStates = Object.keys(stateSums)
  */
 const higherStateSums = Object.keys(stateSums)
 .reduce((sum, state) => {
-  
+
   if (stateSums[state] > 1000000) {
     return sum + stateSums[state];
   }
@@ -144,7 +144,10 @@ const higherStateSums = Object.keys(stateSums)
   if true set `areStatesInHigherStateSum` to `true`
   otherwise set it to `false`
  */
-const areStatesInHigherStateSum = null;
+const areStatesInHigherStateSum = selectStates
+.every(state => {
+  return stateSums[state] > 2550000;
+});
 
 /*
   Stretch Goal && Final Boss
@@ -160,7 +163,9 @@ const areStatesInHigherStateSum = null;
   have a sum of account values greater than 2,550,000
   otherwise set it to be `false`
  */
-const anyStatesInHigherStateSum = null;
+const anyStatesInHigherStateSum = selectStates.some(state => {
+  return stateSums[state] > 2550000;
+});
 
 
 module.exports = {
