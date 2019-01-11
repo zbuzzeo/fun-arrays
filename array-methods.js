@@ -90,8 +90,6 @@ const stateSums = bankBalances
     round this number to the nearest dollar before moving on.
   )
  */
-
-// this can be done with a .filter() and a .reduce();
 const sumOfHighInterests = Object.keys(stateSums)
 .filter(key => {
   return !(selectStates.includes(key));
@@ -107,13 +105,29 @@ const sumOfHighInterests = Object.keys(stateSums)
   abbreviations of each state where the sum of amounts
   in the state is less than 1,000,000
  */
-const lowerSumStates = null;
+const lowerSumStates = Object.keys(stateSums)
+.reduce((lowerSums, state) => {
+
+  if (stateSums[state] < 1000000) {
+    lowerSums.push(state);
+  }
+
+  return lowerSums;
+}, []);
 
 /*
   aggregate the sum of each state into one hash table
   `higherStateSums` should be the sum of all states with totals greater than 1,000,000
  */
-const higherStateSums = null;
+const higherStateSums = Object.keys(stateSums)
+.reduce((sum, state) => {
+  
+  if (stateSums[state] > 1000000) {
+    return sum + stateSums[state];
+  }
+
+  return sum;
+},0);
 
 /*
   from each of the following states:
